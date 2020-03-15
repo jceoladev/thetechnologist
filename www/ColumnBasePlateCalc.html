@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--teste 1
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script type = "text/javascript" src = "js/script.js" ></script>
+   <script type="text/javascript">
+    //auto expand textarea
+    function adjust_textarea(h) {
+        h.style.height = "20px";
+        h.style.height = (h.scrollHeight)+"px";
+    }
+    </script>
+  </head>
+    
+        <link rel="stylesheet" type="text/css" href="css/css.css">
+              
+
+</html>
+
+
+        <form class="form-style-7">
+          <li>
+          <label><b>Column Base Plate Calc</b></label>
+          <p><label>Column Settings:</label></p>
+          </li>
+
+          <ul>
+          
+            <li>
+            <label for="bf">bf</label>
+            <input type="number" name="ipt_bf" id="bf"></p>
+            <span>Enter with the base dimension "bf"</span>
+            </li>
+            
+            <li>
+            <label for="d">d</label>
+            <input type="number"name="ipt_d" id="d"></p>
+            <span>Enter with the height dimension</span>
+            </li>
+
+            <li>
+            <label for="Fy">Fy</label>
+            <input type="number"name="ipt_Fy" id="fy"></p>
+            <span>Enter with the vertical load</span>
+            </li>
+
+            <li>
+            <label for="Fu">Fu</label>
+            <input type="number"name="ipt_Fu" id="fu"></p>
+            <span>Enter with the force ???</span>
+            </li>
+  
+
+            <li>
+            <label for="q">q</label>
+            <input type="number"name="ipt_q" id="q"></p>
+            <span>Enter with the force ???</span>
+            </li>
+
+            <li>
+            <label for="fck">Fck</label>
+            <input type="number"name="ipt_fck" id="fck"></p>
+            <span>Enter with the force ???</span>
+            </li>
+  
+            <li>
+            <label for="A2byA1">A2/A1</label>
+            <input type="number"name="ipt_A2byA1" step="0.01" id="A2byA1"></p>
+            <span>Enter with the force ???</span>
+            </li>
+            
+            <li>
+            <label for="A">A Dimension</label>
+            <input type="number"name="ipt_A" id="A"></p>
+            <span>Enter A dimension</span>
+            </li>
+
+            <li>
+            <label for="B">B Dimension</label>
+            <input type="number"name="ipt_B" id="B"></p>
+            <span>Enter B dimension</span>
+            </li>
+
+            <li>
+            <label for="Determinating Plate Base">Determinating Plate Base Area</label>
+            <textarea readonly id='res_area'></textarea>
+            <span>fc = N / A*B =< 0.35 * fck <--> A*B = 0.35*fck / N </0.35></span>
+            </li>
+
+        
+            <li>
+            <label for="Determinating new Fc">Determinating the New Fc</label>
+            <textarea readonly id="res_fc"></textarea>
+            <textarea readonly id="res_035fck"></textarea>
+            <textarea readonly id="res_pass"></textarea>
+            <span>Enter B dimension</span>
+            </li>
+            
+            <li>
+              <label for="Determinating the Thickness">Determinating the Thickness</label>
+              <textarea readonly>n = (B-0,8*bf)/2</textarea>
+              <textarea readonly id="res_n"></textarea>
+              <textarea readonly>m = (A-0,95*d)/2</textarea>
+              <textarea readonly id="res_m"></textarea>
+              <textarea readonly>n' = (bf*d)^0,5/4</textarea>
+              <textarea readonly id="res_nl"></textarea>
+              <textarea readonly>M = fc * (n or m or n') /2</textarea>
+              <textarea readonly id="res_M"></textarea>
+              <textarea readonly >fb = m / Wx =< Fb = 0.9 * Fy</textarea>
+              <textarea readonly id="res_t"></textarea>
+              <span>Enter B dimension</span>
+              </li>
+
+
+          <!-- <p><label>fc = N / A*B =< 0.35 * fck</label></p>
+          <label>A*B = </label><span id='resultFc'></span><label> cm2</label>
+          
+
+          <p><label>A</label><input type="number" name="ipt_A" id="A"></p>
+          <p><label>B</label><input type="number" name="ipt_B" id="B"></p>
+          -->
+          
+          <input type="button" value="Calculate" onclick="showResult()" id="btn_calc"><br/>  
+        
+        </ul>
+        </form>   
